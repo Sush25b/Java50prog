@@ -1,3 +1,16 @@
+
+/*********************************************************************************************************
+ * @purpose : Utility Class having following static methods binarySearch method for string
+ * 				 &  Check using Stopwatch the Elapsed Time for every method call
+ * 
+ * @author  : Sushant Phulsundar
+ * 
+ *@version  : 1.0 
+ *
+ *@since    : 1-01-2019
+ *
+ *********************************************************************************************************/
+
 package org.bridgelabz.alogrithm;
 
 import java.util.Scanner;
@@ -26,7 +39,7 @@ public class BinarySearch
 		        int h=arr.length-1;
 		        
 		//started stopwatch
-		     long start = System.currentTimeMillis();
+		     long start = System.nanoTime();
 		        	
 		     	//Here we Call the BinarySearch Method
 		        		int ans= Utility.binarySearch(arr,l,h,ele); 
@@ -40,13 +53,13 @@ public class BinarySearch
 		        
 		 
 		//end stopwatch
-		     long end = System.currentTimeMillis();
+		     long end = System.nanoTime();
 		        
 		  //calculating the difference between------{the two nos enetered}
-		        long time= (long) ((end - start) / 1000.0);
+		        long time= (end - start);
 		       
 		   //print the time
-		        System.out.println("\n"+"the elapsed time performance:"+ time);
+		        System.out.println("\n"+"the elapsed time performance in nanoseconds:"+ time);
 		 }  
 }
 /*

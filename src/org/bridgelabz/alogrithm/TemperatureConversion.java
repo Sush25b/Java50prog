@@ -1,3 +1,14 @@
+
+/*********************************************************************************************************
+ * @purpose : temperaturConversion static function, given the temperature in fahrenheit as input outputs the temperature in Celsius or viceversa 
+ * 
+ * @author  : Sushant Phulsundar
+ * 
+ *@version  : 1.0 
+ *
+ *@since    : 1-01-2019
+ *
+ *********************************************************************************************************/
 package org.bridgelabz.alogrithm;
 
 import javax.swing.text.Utilities;

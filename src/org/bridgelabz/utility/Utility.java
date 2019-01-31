@@ -11,10 +11,25 @@ public class Utility
 	static int counter=0;
 	//static Utility utility = new Utility();
 
-
-	
 	static Scanner sc = new Scanner(System.in);
 
+	// INPUT STRING
+		/**
+		 * @return : String
+		 */
+
+		public static String inputStringNext() 
+		{
+			try {
+				return sc.next();
+
+			    } 
+			    catch (Exception e) 
+			    {
+				//System.out.println(e);
+			    }
+			    return "";
+		}
 
 	// INPUT STRING
 	/**
@@ -486,6 +501,25 @@ public class Utility
 		
 	//*****************************************STRING PERMUTATION**************************************************
 		
+		  /** 
+	     * Swap Characters at position 
+	     * @param a string value 
+	     * @param i position 1 
+	     * @param j position 2 
+	     * @return swapped string 
+	     */
+	    
+	               //  str = swap(str , l , i);
+	    public static String swap(String a, int l, int i) //abc 0 0 
+	    { 
+	        char temp; 
+	        char[] charArray = a.toCharArray(); 
+	        temp = charArray[l] ; 
+	        charArray[l] = charArray[i]; 
+	        charArray[i] = temp; 
+	        return String.valueOf(charArray); 
+	    } 
+		
 		/** 
 	     * permutation function 
 	     * @param str string to calculate permutation for 
@@ -493,7 +527,7 @@ public class Utility
 	     * @param r end index 
 	     */
 	
-	 		//initally    permute(ABC , 0 ,  2)
+	 		  			//initally    permute(ABC , 0 ,  2)
 	    public static void stringPermutation(String str, int l, int r) 
 	    { 
 	        if (l == r) 
@@ -504,9 +538,10 @@ public class Utility
 	        { 
 	            for (int i = l; i <= r; i++)   //abc
 	            { 
-	            	System.out.println("pint i same l="+i);
-	            	System.out.println("pint l="+l);
-	            	System.out.println("pint r="+r);
+	            	System.out.println("(i goes from==> l to r)");
+	            	System.out.println("print i="+i);
+	            	System.out.println("print l="+l);
+	            	System.out.println("print r="+r);
 	            	 
 	            	//for level 1   l=0 will initially 
 	                str = swap(str,l,i);             //bwithb
@@ -518,24 +553,7 @@ public class Utility
 	        } 
 	    } 
 	  
-	    /** 
-	     * Swap Characters at position 
-	     * @param a string value 
-	     * @param i position 1 
-	     * @param j position 2 
-	     * @return swapped string 
-	     */
-	    
-	  //  str = swap(str,l,i);
-	    public static String swap(String a, int l, int i) //abc 0 0 
-	    { 
-	        char temp; 
-	        char[] charArray = a.toCharArray(); 
-	        temp = charArray[l] ; 
-	        charArray[l] = charArray[i]; 
-	        charArray[i] = temp; 
-	        return String.valueOf(charArray); 
-	    } 
+	  
 //Stopwatch time=====================================================================================================
 //#13 ques no13
 		
@@ -785,7 +803,7 @@ public class Utility
 	  	   * @param end
 	  	   * @return : void
 	  	   */
-	  	  public static void  primenos(int start,int end)
+	  	  public static void primenos(int start,int end)
 	  	  {
 	  		  		// to print prime nos
 	  			  	for (int i = start; i <= end; i++)
@@ -890,9 +908,9 @@ public class Utility
 			  		//#1//call goes to isPrime2 method--to check prime or not
 			  			if (isPrime2(i)) 
 			  			{  
-			  				counter++;
-			  				
 			  				arr[counter]=i;
+			  				
+			  				counter++;
 			  			}  
 			  	}  
 			  	
@@ -908,15 +926,15 @@ public class Utility
 			  	
 			  	for (int j=0; j<counter; j++)
 			  	{  
-			  	   //#2//call goes to get palindrome of a  no
-			  		 int s= palindrome(arr[j]);
+			  					//#2//call goes to get palindrome of a  no
+			  					int reverse= palindrome(arr[j]);
 			  		 
 			  		 //matching the palindrome of every no---with the Array(of prime no)
 			  	     for(int k=0; k<counter; k++)
 			  	     {
-			  	    	 if(arr[k]==s)
+			  	    	 if(arr[k]==reverse)
 			  	    	 {
-			  	    		 System.out.println(arr[j] +" , "+arr[k]);
+			  	    		 		System.out.println(arr[j] +" , "+arr[k]);
 			  	    	 }
 			  	     }
 			  	}
@@ -1003,11 +1021,13 @@ public class Utility
 
 	//////3) insertion sort
 
-		  /**
+	/*	  *//**
 		   * Function to sort array using insertion sort
 		   * @param arr
-		   */
-		    public static void insertionsort(int[] arr) 
+		   *//*
+		    public static void(arr[])
+		    { 
+		    (int[] arr) 
 		    { 
 		        int n = arr.length; 
 		        
@@ -1021,7 +1041,7 @@ public class Utility
 		        	
 		            int val = arr[i+1]; //take value of next position 
 		  
-		            /* Move elements of arr[0..i-1], that are greater than key, to one position ahead of their current position */
+		             Move elements of arr[0..i-1], that are greater than key, to one position ahead of their current position 
 		           
 		           for(j=i;j>=0;j--)
 		            { 
@@ -1038,7 +1058,7 @@ public class Utility
 		          printArray(arr); 	//will print each Recursion
 		        } 
 		    } 
-		  
+		  */
 		    /**
 		     * A utility function to print array of size n
 		     * @param arr
@@ -1395,174 +1415,429 @@ public class Utility
 //===================================================================================================
 //#ques no 11
 				    
-				    /**
-				     * Standard Calendar---find day
-				     * 
-				     * @param date
-				     * @param month
-				     * @param year
-				     * 
-				     * @return : void
-				     */
-				    public static void calendar(int date,int month,int year) 
-					{
-					   
-				      //Standard way---to find day	
-				    	
-						int year0= year-(14-month)/12;    
-						
-						int x = year0 + (year0 / 4) - (year0 / 100) + (year / 400);
-						
-						int m0 = month + 12 * ((14 - month) / 12) - 2;
+	    /**
+	     * Standard Calendar---find day
+	     * 
+	     * @param date
+	     * @param month
+	     * @param year
+	     * 
+	     * @return : void
+	     */
+	    public static void calendar(int date,int month,int year) 
+		{
+		   
+	      //Standard way---to find day	
+	    	
+			int year0= year-(14-month)/12;    
+			
+			int x = year0 + (year0 / 4) - (year0 / 100) + (year / 400);
+			
+			int m0 = month + 12 * ((14 - month) / 12) - 2;
 
-						int dateofday = (date + x + ((31 * m0) / 12)) % 7;
-						
-						System.out.println("Date: "+date +"   Month: "+month+"   Year: "+year);
-						
-						System.out.println("the day was:");
-						
-						switch(dateofday)		///find day
-						{
-							case 0: System.out.println("Sunday");
-										break;
-							case 1: System.out.println("Monday");
-										break;
-							case 2: System.out.println("Tuesday");
-										break;
-						
-							case 3: System.out.println("Wednesday");
-											break;
-							case 4: System.out.println("Thrusday");
-											break;
-							case 5: System.out.println("Friday");
-											break;
-							case 6: System.out.println("Saturday");
-											break;
-					   }
-					}
+			int dateofday = (date + x + ((31 * m0) / 12)) % 7;
+			
+			System.out.println("Date: "+date +"   Month: "+month+"   Year: "+year);
+			
+			System.out.println("the day was:");
+			
+			switch(dateofday)		///find day
+			{
+				case 0: System.out.println("Sunday");
+							break;
+				case 1: System.out.println("Monday");
+							break;
+				case 2: System.out.println("Tuesday");
+							break;
+			
+				case 3: System.out.println("Wednesday");
+								break;
+				case 4: System.out.println("Thrusday");
+								break;
+				case 5: System.out.println("Friday");
+								break;
+				case 6: System.out.println("Saturday");
+								break;
+		   }
+		}
 				 
 //===================================================================================================
 //#ques no 12
-				    /**
-				     * method to convert celcius and fahrenheit
-				     * @param celsius
-				     * @param fahrenheit
-				     */
-				    public static void celsiusfahrenheit(double celsius, double fahrenheit)
-					{
+	    /**
+	     * method to convert celcius and fahrenheit
+	     * @param celsius
+	     * @param fahrenheit
+	     */
+	    public static void celsiusfahrenheit(double celsius, double fahrenheit)
+		{
 
-						double celstoFah = (celsius * 9 / 5) + 32;
-						System.out.println("The celsius to fahrenheit temperature is: " + celstoFah);
-						
-						double fahtoCels = (fahrenheit - 32) * 5 / 9;
-						System.out.println("The fahrenheit to celsius temperature is: " + fahtoCels);
+			double celstoFah = (celsius * 9 / 5) + 32;
+			System.out.println("The celsius to fahrenheit temperature is: " + celstoFah);
+			
+			double fahtoCels = (fahrenheit - 32) * 5 / 9;
+			System.out.println("The fahrenheit to celsius temperature is: " + fahtoCels);
 
-					}
+		}
 				    
 //===================================================================================================
 //#ques no 13
 				    
-				    /**
-				     * Calculation monthly payment----if their is a loan
-				     * @param P
-				     * @param Y
-				     * @param R
-				     * @return
-				     */
-					  public static double monthpayment(double P,double Y,double R)
-					  {
-						  double n= 12*Y;
-						  
-						  double r= R/(12 * 100);
-						  
-						  //payment formula
-						  double Payment= (P*r)/(1-Math.pow( (1+r), (-n)));
+	    /**
+	     * Calculation monthly payment----if their is a loan
+	     * @param P
+	     * @param Y
+	     * @param R
+	     * @return
+	     */
+		  public static double monthpayment(double P,double Y,double R)
+		  {
+			  double n= 12*Y;
+			  
+			  double r= R/(12 * 100);
+			  
+			  //payment formula
+			  double Payment= (P*r)/(1-Math.pow( (1+r), (-n)));
 
-						return Payment;
-					  }
+			return Payment;
+		  }
 //===================================================================================================
 //#ques no 14
 
-					  public static double sqrtNewtonMethod(double c)
-					    {
-					    	/*If you multiply 10 000 000 000 x 10 000 000 000 = the answer is too big so you will see 1e+20 */
-					        double epsilon = 1e-15;    // relative error tolerance
+	 /**
+	  * to calculate sqrt of the given input by using---formula
+	  * @param c : input for which to find sqrt
+	  * @return  : Double
+	  */
+	  public static double sqrtNewtonMethod(double c)
+	    {
+	    	/*If you multiply 10 000 000 000 x 10 000 000 000 = the answer is too big so you will see 1e+20 */
+	        double epsilon = 1e-15;    // relative error tolerance
 
-					        
-					        double t = c;              // estimate of the square root of c
+	        
+	        double t = c;              // estimate of the square root of c
 
-					        
-					        // repeatedly apply Newton update step until desired precision is achieved
-					        while ( (Math.abs(t - c/t)) > (epsilon * t) )
-					        {
-					            t = (c/t + t) / 2.0;
-					        }
-							return t;
-					    
-					  }
+	        
+	        // repeatedly apply Newton update step until desired precision is achieved
+	        while ( (Math.abs(t - c/t)) > (epsilon * t) )
+	        {
+	            t = (c/t + t) / 2.0;
+	        }
+			return t;
+	    
+	  }
 //===================================================================================================
 //#ques no 16
-			// returns the string representation of the unsigned int value
-			      // represented by the argument in binary (base 2) 
-					     /**
-					      * to convert int to binary & then o/p--which we get---we swap Nibbles of it 
-					      * @param l
-					      * @return : String
-					      */
-					     public static String convertToBinary(int l)
-					     {
-					    	 String str="";
-					    	 
-					    	//##### //converted int--to---String
-					 	    String n= Integer.toBinaryString(l); //converted int--to---BinaryString
-					 	    	System.out.println("\n"+"Binary vlaue of "+l+ " is: " + n); //print binary of 234
-					 	   
-					 	   
-					 	   //count the length of the string---- in mutiples of 4
+		// returns the string representation of the unsigned int value
+		      // represented by the argument in binary (base 2) 
+				     /**
+				      * to convert int to binary & then o/p--which we get---we swap Nibbles of it 
+				      * @param l
+				      * @return : String
+				      */
+				     public static String convertToBinary(int l)
+				     {
+				    	 String str="";
+				    	 String str2="";
+				    	 
+				    	//##### //converted int--to---String
+				 	    String n= Integer.toBinaryString(l); //converted int--to---BinaryString
+				 	    	System.out.println("\n"+"Binary vlaue of "+l+ " is: " + n); //print binary of 234
+				 	   
+				 	   
+				 	    //if the length of input no is less then Or not not equal to 8
+				 	    	//then we r going to pad with 0 in the  front of the no
+				 	    	while(n.length()!=8)
+				 		   {     
+				 			     n= 0+n;				 			    
+				 		   }
+				 	    	System.out.println("After padding the no is now");
+				 	    	System.out.println(n);
+				 		   
+				 		  //count the length of the string---- in mutiples of 4
 					 	    int Stringlengoffourset =n.length()/4; 	//{it will be 2}---for int 234
 					 	    	System.out.println("\n"+"the length of the string---- in mutiples of 4 is: " + Stringlengoffourset);
-					 	       
-					 	   
-					 //#1 //HEre the String length of fourset---is 2
-					 	       //#2 //if count is 2 then 
-					 	        int count=Stringlengoffourset-1; //#2 then // 2-1 = 1
-					 	        
-					 	        while(count>=0)
-					 	        {                         //1*4  ,    //1*4+4
-					 	        	str=str+n.substring( count*4 ,  (count*4)+4 );
-					 	        	count--;
-					 	        }
-					 	        
-					 	       // System.out.println(str);
-								return str;   //final in to binary---result in String
-					 	    } 
-					     	
-			// returns the int representation of the unsigned int value
-				     public static int convertToDecimal(int n)
-					  {
-						   
-				            System.out.println("the binary number is: "+n);
+				 	   
+				 	    	
+				 	    	
+				 	    	//#1 //HEre the String length of fourset---is 2
+				 	       //#2 //if count is 2 then 
+				 	        int count=Stringlengoffourset-1; //#2 then // 2-1 = 1
+				 	        
+				 	        while(count>=0)
+				 	        {                         //1*4  ,    //1*4+4
+				 	        	str=str+n.substring( count*4 ,  (count*4)+4 );
+				 	        	count--;
+				 	        }
+				 	        
+				 	       // System.out.println(str);
+							return str;   //final in to binary---result in String
+				 	    } 
+				     	
+		// returns the int representation of the unsigned int value
+			     public static int convertToDecimal(int n)
+				  {
+					   
+			            System.out.println("no wth new binary number is: "+n);
 
-				            int decimal=0,p=0;
-				           
-				            while(n!=0)
-				            {
-				                decimal= (int) (decimal + ((n%10)*Math.pow(2,p)) );
-				                n=n/10;
-				                p++;
-				            }
-							return decimal;
-					  }
+			            int decimal=0,p=0;
+			           
+			            while(n!=0)
+			            {
+			                decimal= (int) (decimal + ((n%10)*Math.pow(2,p)) );
+			                n=n/10;
+			                p++;
+			            }
+						return decimal;
+				  }
+			     
+			     
+				  
+//***888888888888888888888888888888 Alogrithm Program 8888888888888888888888888888888888888888888888
+				     
 //===================================================================================================
-	  	//#ques no 01
-	  	//===================================================================================================
-	  	//#ques no 01
-	  	//===================================================================================================
-	  	//#ques no 01
-	  	//===================================================================================================
-	  	//#ques no 01
-	  	//===================================================================================================
-	  	//#ques no 01
+//#ques no 07		
+	     /**
+		 * A recursive function to find nth catalan number 
+		 * 
+		 * @param n : input value from user
+		 * @return  : Integer
+		 */
+		public static int catalan(int n) 	//e.g   catalan( 3 )
+	    {				 
+	        int res = 0; //to store the RESULT  
+	          
+			      // Base case like {C0 ,C1---value should be zero 
+			      if (n <= 1) 
+			      { 
+			            return 1; 
+			      } 
+	        
+		       //if catalan(3) means---->we have to calculate( E0 to 3 submission of 0 to3) 
+		        for (int i = 0; i < n; i++)
+		        { 
+		        	//refer the Formula
+		            res = res  + catalan(i) * catalan(n - i - 1); //recursive call
+		        } 
+		        
+	        return res; //retrun result
+	    } 
+//===================================================================================================
+//#ques no 08
+			/**
+			 * Standard Calendar---find day
+			 * 
+			 * @param date
+			 * @param month
+			 * @param year
+			 * 
+			 * @return : void
+			 */
+						//e.g calendar( 1     ,  january  , 1997 )
+			public static int calendar2(int date,int month,int year) 
+			{
+			   
+			      //Standard way---to find day---->cal formula
+					int year0= year-(14-month)/12;    
+					
+					int x = year0 + (year0 / 4) - (year0 / 100) + (year / 400);
+					
+					int m0 = month + 12 * ((14 - month) / 12) - 2;
+			
+					int dateofday = (date + x + ((31 * m0) / 12)) % 7;
+				
+				//Display the inputs of user
+				System.out.println("Date: "+date +"   Month: "+month+"   Year: "+year);
+				
+				//displaying the DAY---for which the inputs are given By USER
+				System.out.println("the day was:");
+				
+					switch(dateofday)		//switch case to find day
+					{
+						case 0: System.out.println("Sunday");
+									return 0; 
+						case 1: System.out.println("Monday");
+									return 1;
+						case 2: System.out.println("Tuesday");
+									return 2;		
+						case 3: System.out.println("Wednesday");
+									return 3;
+						case 4: System.out.println("Thrusday");
+									return 4;
+						case 5: System.out.println("Friday");
+									return 5;
+						case 6: System.out.println("Saturday");
+									return 6;
+				    }	
+					return 7;
+			}
+//==================================================================================================
+//#ques no 9
+					
+					/**
+					   * Function to sort array using insertion sort
+					   * @param arr
+					   */
+					    public static void insertionsort(int arr[])
+					    { 
+					  
+					        int n = arr.length; 
+					        
+					        int i,j;
+					        
+					      //array is 5---{0 to 4}
+					        for (i=0; i<n-1;i++)  //----will go 0 to 3
+					        { 
+					        	
+					        	System.out.println("\n"+"Iteration no: "+i);
+					        	
+					            int val = arr[i+1]; //take value of next position 
+					  
+					            // Move elements of arr[0..i-1], that are greater than key, to one position ahead of their current position 
+					           
+					           for(j=i;j>=0;j--)
+					            { 
+					                if(arr[j] > val) //if current value greater then next 
+					                {
+					                	arr[j+1] = arr[j]; //swap
+					                }
+					                else
+					                	break; 	//#1 //(now j is becomes less)
+					            } 
+					           
+					          arr[j+1] = val;	 //#2 //(so add j+1 to put no at right location)
+					          
+					          printArray(arr); 	//will print each Recursion
+					        } 
+					    } 
+					  
+				
+		
+//===================================================================================================
+//#ques no 10
+			
+	 /**
+	   * check the no--->is prime or not
+	   * @param n
+	   * @return : boolean
+	   */
+	  public static boolean isPrime3(int n) //e.g n=15 any no----from the given range
+	  {  
+		  int m = n/2;
+		  
+		  		if (n <= 1)  //e.g n=15
+		  		{  
+		  			return false;  
+		  		}  
+      
+		  	//e.g n=15
+		  	for (int i = 2; i <= m; i++) //------use use n/2 ,if we use MAth.sqrt(n) and if n=25...answer is 5...so directy print not p
+		  	{  
+		  			if (n % i == 0)
+		  			{  
+		  					return false;  
+		  			}  
+		  	}  
+       
+		  	return true;  
+	  }    
+//===================================================================================================
+//#ques no 13
+	  
+	  /**
+	 	  * check the no---is prime or not
+	 	  * @param n: the noo to be checked
+	 	  * @return : boolean
+	 	  */
+	 	 public static boolean isPrime4(int n) //e.g n=15 any no----from the given range
+		  {  
+			  		if (n <= 1)  //e.g n=15
+			  		{  
+			  			return false;  
+			  		}  
+	     
+			  	//e.g n=15
+			  	for (int i = 2; i <= Math.sqrt(n); i++) //------use math.sqrt(n) or use n/2
+			  	{  
+			  			if (n % i == 0)
+			  			{  
+			  					return false;  
+			  			}  
+			  	}  
+	      
+			  	return true;  
+		  }  
+	 	 
+	 	 /**
+	 	  * to get palindrome of a no
+	 	  * @param m: no to take palindrome/reverse
+	 	  * @return : Integer
+	 	  */
+	 	 public static int Anagram4(int m) //reverse
+		  {
+			  int r,sum=0,temp; 
+			  
+			  //It is the number variable to be checked for palindrome    
+			  
+			  while(m>0)
+			  {    
+			     r =   m % 10;  //getting remainder  
+			     sum= ( sum * 10 ) + r;    
+			     m = m / 10;    
+			  }    
+			  
+	         return sum; 
+		  }
+	 	
+//===================================================================================================
+//#ques no 14
+	 	 
+	 	/**
+	 	  * check the no---is prime or not
+	 	  * @param n
+	 	  * @return : boolean
+	 	  */
+	 	 public static boolean isPrime5(int n) //e.g n=15 any no----from the given range
+		  {  
+			  		if (n <= 1)  //e.g n=15
+			  		{  
+			  			return false;  
+			  		}  
+	     
+			  	//e.g n=15
+			  	for (int i = 2; i <=Math.sqrt(n); i++) //------use math.sqrt(n) or use n/2
+			  	{  
+			  			if (n % i == 0)
+			  			{  
+			  					return false;  
+			  			}  
+			  	}  
+	      
+			  	return true;  
+		  }  
+	 	 
+	 	 /**
+	 	  * to get palindrome of a no
+	 	  * @param m
+	 	  * @return : Integer
+	 	  */
+	 	 public static int Anagram5(int m)
+		  {
+			  int r,sum=0,temp; 
+			  
+			  //It is the number variable to be checked for palindrome    
+			  
+			  while(m>0)
+			  {    
+			     r =   m % 10;  //getting remainder  
+			     sum= ( sum * 10 ) + r;    
+			     m = m / 10;    
+			  }    
+			  
+	         return sum; 
+		  }
+	 	 
+	 	 
+	 	 
 	  	//===================================================================================================
 	  	//#ques no 01
 	  	//===================================================================================================

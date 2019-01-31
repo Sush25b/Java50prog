@@ -28,44 +28,6 @@ public class palindrome
 	    	}
 	    	else
 	    		System.out.println("print it is not a palindrome");
-	    	
-	    	
-	    	
-	    	static boolean isAnagram(String str1, String str2) 
-		    {  
-		    
-		       /*if their is place between two string--------- then replace it with "" 
-		    	
-		        String s1 = str1.replaceAll("\\s", "");  
-		        String s2 = str2.replaceAll("\\s", "");  
-		       */
-		    	
-		       int c1[]= countAlpha(str1);
-		       int c2[]= countAlpha(str2);
-		        
-
-		       		for(int i=0;i<26;i++)
-		       		{
-			    	   if(c1[i]!=c2[i])
-			    	   {
-			    		   return false;
-			    	   }
-		       		}
-		       
-		       return true;
-		       
-		    }
-		    
-		   
-		       
-		    }
-		    
-
-		    	
-			
-		  
-    	}
-	 
-	 
-	    
+			  
+    	}  
 }

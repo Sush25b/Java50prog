@@ -1,4 +1,15 @@
 
+/*********************************************************************************************************
+ * @purpose :function that takes a date as input and prints the day of the week  
+ * 					Use the following formulas, for the Gregorian calendar
+ * 
+ * @author  : Sushant Phulsundar
+ * 
+ *@version  : 1.0 
+ *
+ *@since    : 10-01-2019
+ *
+ *********************************************************************************************************/
 
 package org.bridgelabz.alogrithm;
 
@@ -8,8 +19,6 @@ import org.bridgelabz.utility.Utility;
 
 public class DayOfWeek 
 {
-
-
 	public static void main(String[] args) 
 	{
 		

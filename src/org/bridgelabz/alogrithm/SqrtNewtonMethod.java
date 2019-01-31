@@ -1,4 +1,14 @@
-	
+
+/*********************************************************************************************************
+ * @purpose : function sqrt  to compute the square root of a nonnegative number c given in the input using Newton's method:
+ * 
+ * @author  : Sushant Phulsundar
+ * 
+ *@version  : 1.0 
+ *
+ *@since    : 1-01-2019
+ *
+ *********************************************************************************************************/	
 
 
 
@@ -13,10 +23,7 @@
 	 * Output
 	 *  1.414213562373095
 	 */
-
-  
-	        
-	        
+        
 package org.bridgelabz.alogrithm;
 
 import java.util.Scanner;

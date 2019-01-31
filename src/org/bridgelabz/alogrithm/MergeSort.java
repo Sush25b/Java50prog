@@ -1,11 +1,20 @@
+
+/*********************************************************************************************************
+ * @purpose :a program with Static Functions to do Merge Sort of list of Strings. 
+ * 
+ * @author  : Sushant Phulsundar
+ * 
+ *@version  : 1.0 
+ *
+ *@since    : 1-01-2019
+ *
+ *********************************************************************************************************/
 package org.bridgelabz.alogrithm;
 
 import org.bridgelabz.utility.Utility;
 
 public class MergeSort 
 {
-	
-  
     /* A utility function to print array of size n */
     static void printArray(int arr[]) 
     { 

@@ -1,3 +1,15 @@
+/*********************************************************************************************************
+ * @purpose : Tic Tac game 
+ * 
+ * @author  : Sushant Phulsundar
+ * 
+ *@version  : 1.0 
+ *
+ *@since    : 10-01-2019
+ *
+ *********************************************************************************************************/
+
+
 package org.bridgelabz.functionalprogram;
 
 import java.util.Random;
@@ -7,8 +19,6 @@ import org.bridgelabz.utility.Utility;
 
 public class Tictak 
 {
-	static Scanner sc=new Scanner(System.in);
-	
 	int i,j;
 	// arr[i][j]+" "
 	
@@ -35,7 +45,8 @@ public class Tictak
 			System.out.println();
 		}
 	}
-	/*static int isempty(char arr[][])
+	
+	static int isempty(char arr[][])
 		{
 		   int i,j,k;
 			for(i=0;i<3;i++)
@@ -49,7 +60,7 @@ public class Tictak
 				}
 			}
 			return 1;
-		}*/
+		}
 	 
 	boolean result(char arr[][])
 	{
@@ -97,83 +108,91 @@ public class Tictak
 		return false;
 	}
 	 
-	 
-public static void main(String[] args)
-{
-
-	 Tictak t=new  Tictak();
-	 
-	int x,y;
-
-	char[][] arr=new char[3][3];
-	
-	t.insertsymbol(arr);
-	
-	while(true)
+	boolean result2(char arr[][])
 	{
-		boolean b=true;
-		Utility utility = new Utility();
-		
-		Random ramno=new Random(); 
-		
-		System.out.println("\n"+"Computer turn to play");
-		do
-		{	x=ramno.nextInt(3);
-	
-			y=ramno.nextInt(3);
-		
-		    System.out.println("computer choose position----"+" "+x+" ,"+y);
-			if(arr[x][y]=='-')
-		    {
-		    	arr[x][y]='0';
-		    	b=false;
-		    }
-			t.display(arr);
-		}while(b);
-		
-		if(t.result(arr)==true)
+		if(arr[0][0]=='0'&& arr[0][1]=='0'&&arr[0][2]=='0')
 		{
-			System.out.println("******User Won*********");
-			System.exit(0);
+			System.out.println("Computer won");
+			return true;
 		}
-		else 
-			{
-			  System.out.println("false");
-			}
+		if(arr[1][0]=='0'&& arr[1][1]=='0'&&arr[1][2]=='0')
+		{
+			System.out.println("Computer won");
+			return true;
+		}
+		if(arr[2][0]=='0'&& arr[2][1]=='0'&&arr[2][2]=='0')
+		{
+			System.out.println("Computer won");
+			return true;
+		}
+		if(arr[0][0]=='0'&& arr[1][0]=='0'&&arr[2][0]=='0')
+		{
+			System.out.println("Computer won");
+			return true;
+		}
+		if(arr[0][1]=='0'&& arr[1][1]=='0'&&arr[2][1]=='0')
+		{
+			System.out.println("Computer won");
+			return true;
+		}
+		if(arr[0][2]=='0'&& arr[1][2]=='0'&&arr[2][2]=='0')
+		{
+			System.out.println("Computer won");
+			return true;
+		}
+		if(arr[0][0]=='0'&& arr[1][1]=='0'&&arr[2][2]=='0')
+		{
+			System.out.println("Computer won");
+			return true;
+		}
+		if(arr[0][2]=='0'&&arr[1][1]=='0'&&arr[2][0]=='0')
+		{
+			System.out.println("Computer won");
+			return true;
+		}
+
+		return false;
+	}
+	 
+	 
+	public static void main(String[] args)
+	{
+	
+		 Tictak t=new  Tictak();
+		 
+		int x,y;
+	
+		char[][] arr=new char[3][3];
 		
-		//if(t.result(arr)!= false)
-		//{
-		//	      t.display(arr);
-		//}
+		t.insertsymbol(arr);
 		
-		//=======================================================================================
-		boolean a=true;
-		
-			do
-			{	
-				System.out.println("\n"+"USer turn to play");
-				System.out.println("select a Co-ordinate to put----- X");
-				
-				System.out.print("Enter x value:");
-				x = sc.nextInt();
-				
-				System.out.print("Enter y value:");
-				y = sc.nextInt();
-				
-			   if(arr[x][y]=='-')
-			   {
-			    	arr[x][y]='X';
-			    	a=false;
-			   }
-			  else
-			  	System.out.println("already filled put again");  	
-			}while(a);  
+		while(true)
+		{
+			boolean b=true;
+			Utility utility = new Utility();
 			
+			Random ramno=new Random(); 
+			
+			System.out.println("\n"+"Computer turn to play");
+			while(b)
+			{	x=ramno.nextInt(3);
+		
+				y=ramno.nextInt(3);
+			
+			    System.out.println("computer choose position----"+" "+x+" ,"+y);
+				if(arr[x][y]=='-')
+			    {
+			    	arr[x][y]='0';
+			    	b=false;
+			    }
+				
+			}
 			t.display(arr);
-			    	
-			if(t.result(arr)==true)
+			
+			
+			if(t.result2(arr)==true)
 			{
-				System.out.println("******User Won*********");
+				System.out.println("******Computer Won*********");
 				System.exit(0);
 			}
 			else 
@@ -181,11 +200,59 @@ public static void main(String[] args)
 				  System.out.println("false");
 				}
 			
+			//if(t.result(arr)!= false)
+			//{
+			//	      t.display(arr);
+			//}
 			
-		//===========================================================================
-	
+			//=======================================================================================
+			boolean a=true;
+			
+			    while(a) 
+				{	
+					System.out.println("\n"+"USer turn to play");
+					System.out.println("select a Co-ordinate to put----- X");
+					
+					System.out.print("Enter x value:");
+					x = Utility.inputInteger();
+					
+					System.out.print("Enter y value:");
+					y = Utility.inputInteger();
+					
+				   if(arr[x][y]=='-')
+				   {
+				    	arr[x][y]='X';
+				    	a=false;
+				   }
+				  else
+				  	System.out.println("already filled put again");  	
+				} 
+				
+				t.display(arr);
+				    	
+				if(t.result(arr)==true)
+				{
+					System.out.println("******User Won*********");
+					System.exit(0);
+				}
+				else 
+					{
+					  System.out.println("false");
+					}
+				
+				
+			//===========================================================================
+				
+		    int result=isempty(arr);
+		    if(result==1)
+		    {
+		    	System.out.println("match drawn");
+		    	System.exit(0);
+		    }
+				
+				
+		}
 	}
-}
 }
 
 

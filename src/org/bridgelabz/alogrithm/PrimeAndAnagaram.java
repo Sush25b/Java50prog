@@ -19,7 +19,7 @@ public class PrimeAndAnagaram
 {
 	 public static void main(String[] args) 
 	   {   
-	       
+	       //take 
 	       System.out.print("Enter the first number : ");  
 	       int start = Utility.inputInteger(); 
 	       

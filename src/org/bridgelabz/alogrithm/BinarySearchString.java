@@ -1,3 +1,15 @@
+
+/*********************************************************************************************************
+ * @purpose : Utility Class having following static methods binarySearch method for string
+ * 				 &  Check using Stopwatch the Elapsed Time for every method call
+ * 
+ * @author  : Sushant Phulsundar
+ * 
+ *@version  : 1.0 
+ *
+ *@since    : 1-01-2019
+ *
+ *********************************************************************************************************/
 package org.bridgelabz.alogrithm;
 import java.util.Arrays;
 

@@ -1,3 +1,14 @@
+
+/*********************************************************************************************************
+ * @purpose : to find the prime numbers that are Anagram and Palindrome 
+ * 
+ * @author  : Sushant Phulsundar
+ * 
+ *@version  : 1.0 
+ *
+ *@since    : 1-01-2019
+ *
+ *********************************************************************************************************/
 package org.bridgelabz.alogrithm;
 
 import java.io.BufferedReader;
@@ -15,7 +26,7 @@ public class BinarySearchFileWord
 
 	public static void main(String[] args) throws IOException
 	{
-		FileInputStream fils=new FileInputStream("/home/bridgeit/eclipse-workspace/Sushantphulsundar");
+		FileInputStream fils=new FileInputStream("Sushantfile");
 		char word[]=new char[100];
 		
 		try {
